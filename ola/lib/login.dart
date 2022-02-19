@@ -1,23 +1,11 @@
+import 'package:app1/splashScreen/splashScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
     const MaterialApp(
       title: "LoginPage",
-      home: MyloginPage(),
+      home: Splashscreen(),
     ),
   );
-}
-
-class MyloginPage extends StatelessWidget {
-  const MyloginPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Login Page"),
-      ),
-    );
-  }
 }
