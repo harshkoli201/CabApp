@@ -36,14 +36,14 @@ class _LoginpageState extends State<Loginpage> {
                   Text(
                     "Welcome To Ola Please Provide your Information To get access to Our Services",
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.grey, fontSize: 15),
+                    style: TextStyle(color: Colors.grey, fontSize: 16),
                   ),
                 ],
               ),
               Container(
                 // width: 500.0,
                 // height: 300.0,
-                height: MediaQuery.of(context).size.height / 3,
+                height: MediaQuery.of(context).size.height / 2,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage("images/taxi.png"),
@@ -68,7 +68,7 @@ class _LoginpageState extends State<Loginpage> {
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 30,
                   ),
                   Container(
                     child: MaterialButton(
