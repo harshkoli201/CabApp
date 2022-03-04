@@ -14,6 +14,7 @@ class _LoginpageState extends State<Loginpage> {
     return SafeArea(
       child: Material(
         child: Container(
+          color: Colors.black,
           width: double.infinity,
           height: MediaQuery.of(context).size.height,
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
@@ -24,7 +25,10 @@ class _LoginpageState extends State<Loginpage> {
                 children: const <Widget>[
                   Text(
                     "Welcome",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                    style: TextStyle(
+                        color: Colors.yellow,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30),
                   ),
                   SizedBox(
                     height: 20,
@@ -53,12 +57,14 @@ class _LoginpageState extends State<Loginpage> {
                     height: 60,
                     onPressed: () {},
                     shape: RoundedRectangleBorder(
-                        side: const BorderSide(color: Colors.black),
+                        side: const BorderSide(color: Colors.yellow),
                         borderRadius: BorderRadius.circular(50)),
                     child: const Text(
                       "Login",
-                      style:
-                          TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18),
                     ),
                   ),
                   const SizedBox(
@@ -70,12 +76,14 @@ class _LoginpageState extends State<Loginpage> {
                       height: 60,
                       onPressed: () {},
                       shape: RoundedRectangleBorder(
-                          side: const BorderSide(color: Colors.black),
+                          side: const BorderSide(color: Colors.yellow),
                           borderRadius: BorderRadius.circular(50)),
                       child: const Text(
                         "Sign Up",
                         style: TextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 18),
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18),
                       ),
                     ),
                   ),
