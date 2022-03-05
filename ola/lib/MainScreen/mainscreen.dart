@@ -1,3 +1,4 @@
+import 'package:app1/MainScreen/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -55,7 +56,12 @@ class _LoginpageState extends State<MainScreen> {
                   MaterialButton(
                     minWidth: double.infinity,
                     height: 60,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LoginPage()));
+                    },
                     shape: RoundedRectangleBorder(
                         side: const BorderSide(color: Colors.yellow),
                         borderRadius: BorderRadius.circular(50)),
