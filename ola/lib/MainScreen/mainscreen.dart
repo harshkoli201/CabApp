@@ -1,4 +1,5 @@
 import 'package:app1/MainScreen/login.dart';
+import 'package:app1/MainScreen/signUp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -47,7 +48,7 @@ class _LoginpageState extends State<MainScreen> {
                 height: MediaQuery.of(context).size.height / 2,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("images/taxi.png"),
+                    image: AssetImage("images/login.png"),
                   ),
                 ),
               ),
@@ -80,7 +81,14 @@ class _LoginpageState extends State<MainScreen> {
                     child: MaterialButton(
                       minWidth: double.infinity,
                       height: 60,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignUpPage(),
+                          ),
+                        );
+                      },
                       shape: RoundedRectangleBorder(
                           side: const BorderSide(color: Colors.yellow),
                           borderRadius: BorderRadius.circular(50)),

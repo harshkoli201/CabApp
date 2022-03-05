@@ -1,8 +1,8 @@
 import 'package:app1/MainScreen/mainscreen.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class LoginPage extends StatelessWidget {
                   Column(
                     children: const <Widget>[
                       Text(
-                        "Login",
+                        "Sign up",
                         style: TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
@@ -49,7 +49,7 @@ class LoginPage extends StatelessWidget {
                         height: 20,
                       ),
                       Text(
-                        "Login To Your Account",
+                        "Create an Account, it's Free",
                         style: TextStyle(fontSize: 15, color: Colors.grey),
                       )
                     ],
@@ -60,6 +60,7 @@ class LoginPage extends StatelessWidget {
                       children: <Widget>[
                         makeInput(label: "Email"),
                         makeInput(label: "Password", obscureText: true),
+                        makeInput(label: "Confirm Password", obscureText: true),
                       ],
                     ),
                   ),
@@ -74,7 +75,7 @@ class LoginPage extends StatelessWidget {
                             side: const BorderSide(color: Colors.yellow),
                             borderRadius: BorderRadius.circular(50)),
                         child: const Text(
-                          "Login",
+                          "Sign up",
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
