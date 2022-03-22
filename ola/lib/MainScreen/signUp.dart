@@ -1,3 +1,4 @@
+import 'package:app1/MainScreen/login.dart';
 import 'package:app1/MainScreen/mainscreen.dart';
 import 'package:flutter/material.dart';
 
@@ -86,28 +87,30 @@ class SignUpPage extends StatelessWidget {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const <Widget>[
-                      Text(
-                        "Don't have an account?",
+                    children: <Widget>[
+                      const Text(
+                        "Already have an account?",
                         style: TextStyle(color: Colors.yellow),
                       ),
-                      Text(
-                        "Sign Up",
-                        style: TextStyle(
-                            color: Colors.yellow,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (constext) => const LoginPage()),
+                          );
+                        },
+                        child: const Text(
+                          "Login",
+                          style: TextStyle(
+                              color: Colors.yellow,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 18),
+                        ),
                       )
                     ],
                   ),
                 ],
-              ),
-            ),
-            Container(
-              height: MediaQuery.of(context).size.height / 4,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("images/login.png"), fit: BoxFit.cover),
               ),
             ),
           ],

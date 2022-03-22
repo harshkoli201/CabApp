@@ -1,4 +1,5 @@
 import 'package:app1/MainScreen/mainscreen.dart';
+import 'package:app1/MainScreen/signUp.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -30,7 +31,7 @@ class LoginPage extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         width: double.infinity,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Expanded(
               child: Column(
@@ -85,17 +86,26 @@ class LoginPage extends StatelessWidget {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const <Widget>[
-                      Text(
+                    children: <Widget>[
+                      const Text(
                         "Don't have an account?",
                         style: TextStyle(color: Colors.yellow),
                       ),
-                      Text(
-                        "Sign Up",
-                        style: TextStyle(
-                            color: Colors.yellow,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 18),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (constext) => const SignUpPage()),
+                          );
+                        },
+                        child: const Text(
+                          "Sign Up",
+                          style: TextStyle(
+                              color: Colors.yellow,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 18),
+                        ),
                       )
                     ],
                   ),
@@ -103,7 +113,7 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             Container(
-              height: MediaQuery.of(context).size.height / 4,
+              height: MediaQuery.of(context).size.height / 3,
               decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("images/login.png"), fit: BoxFit.cover),

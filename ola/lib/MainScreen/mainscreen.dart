@@ -36,7 +36,7 @@ class _LoginpageState extends State<MainScreen> {
                     height: 20,
                   ),
                   Text(
-                    "Welcome To Ola Please Provide your Information To get access to Our Services",
+                    "Welcome To Co-lo Please Provide your Information To get access to Our Services",
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.grey, fontSize: 16),
                   ),
