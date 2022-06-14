@@ -96,7 +96,7 @@ class LoginPage extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (constext) => const SignUpPage()),
+                                builder: (constext) => const SignUp()),
                           );
                         },
                         child: const Text(
@@ -110,13 +110,6 @@ class LoginPage extends StatelessWidget {
                     ],
                   ),
                 ],
-              ),
-            ),
-            Container(
-              height: MediaQuery.of(context).size.height / 3,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("images/login.png"), fit: BoxFit.cover),
               ),
             ),
           ],
