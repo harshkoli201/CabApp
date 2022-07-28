@@ -52,17 +52,8 @@ class LoginPage extends StatelessWidget {
                       Text(
                         "Login To Your Account",
                         style: TextStyle(fontSize: 15, color: Colors.grey),
-                      )
+                      ),
                     ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 40),
-                    child: Column(
-                      children: <Widget>[
-                        makeInput(label: "Email"),
-                        makeInput(label: "Password", obscureText: true),
-                      ],
-                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -115,37 +106,6 @@ class LoginPage extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  Widget makeInput({label, obscureText = false}) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text(
-          label,
-          style: const TextStyle(
-              fontSize: 15, color: Colors.yellow, fontWeight: FontWeight.w400),
-        ),
-        const SizedBox(
-          height: 30,
-        ),
-        TextField(
-          obscureText: obscureText,
-          decoration: const InputDecoration(
-            contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
-            enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.grey),
-            ),
-            border: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.grey),
-            ),
-          ),
-        ),
-        const SizedBox(
-          height: 30,
-        ),
-      ],
     );
   }
 }
