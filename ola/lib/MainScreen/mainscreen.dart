@@ -1,5 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:custom_clippers/custom_clippers.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
+class GoolgeSignInController extends ChangeNotifier {
+  var _googleSignIn = GoogleSignIn();
+
+  GoogleSignInAccount? googleaccount;
+
+  login() async {
+    this.googleaccount = await _googleSignIn.signIn();
+    notifyListeners();
+
+    logOut() async {
+      this.googleaccount = await _googleSignIn.signOut();
+      notifyListeners();
+    }
+  }
+}
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -56,7 +76,31 @@ class _LoginpageState extends State<MainScreen> {
                 ],
               ),
             ),
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(40, 640, 40, 0),
+            child: ElevatedButton.icon(
+              onPressed: () {
+                final provider =
+                    Provider.of<GoolgeSignInController>(context, listen: false);
+                provider.login();
+              },
+              label: const Text(
+                'SignUp with Google',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              style: ElevatedButton.styleFrom(
+                  primary: const Color.fromARGB(255, 0, 0, 0),
+                  onPrimary: const Color.fromARGB(255, 255, 234, 0),
+                  minimumSize: const Size(double.infinity, 50),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0))),
+              icon: const FaIcon(
+                FontAwesomeIcons.google,
+                color: Colors.yellow,
+              ),
+            ),
+          ),
         ],
       ),
     );
