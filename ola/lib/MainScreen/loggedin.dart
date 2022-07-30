@@ -1,18 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-import 'package:provider/provider.dart';
+import 'package:get/get.dart';
+import 'loginController.dart';
 
-import 'mainscreen.dart';
+class Logged extends StatelessWidget {
+  final controller = Get.put(LoginController());
+  Logged({Key? key}) : super(key: key);
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
-
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,46 +18,25 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ],
       ),
-      body: Container(
-        color: Colors.black,
+      body: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          CircleAvatar(
+            backgroundImage:
+                Image.network(controller.googleAccount.value?.photoUrl ?? '')
+                    .image,
+            radius: 100,
+          ),
+          Text(
+            controller.googleAccount.value?.displayName ?? '',
+            style: Get.textTheme.headline1,
+          ),
+          Text(
+            controller.googleAccount.value?.displayName ?? '',
+            style: Get.textTheme.bodyText1,
+          ),
+        ],
       ),
-    );
-  }
-
-  loginUI() {
-    return Consumer<GoolgeSignInController>(
-      builder: (context, model, child) {
-        if (model.googleaccount != null) {
-          return Center(
-            child: loggedInUI(model),
-          );
-        } else {
-          return MainScreen();
-        }
-      },
-    );
-  }
-
-  loggedInUI(GoolgeSignInController model) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        CircleAvatar(
-          backgroundImage:
-              Image.network(model.googleaccount!.photoUrl ?? '').image,
-          radius: 50,
-        ),
-        Text(model.googleaccount!.displayName ?? ''),
-        Text(model.googleaccount!.email),
-        ActionChip(
-          label: Text('LogOut'),
-          avatar: Icon(Icons.logout),
-          onPressed: () {
-            Provider.of<GoolgeSignInController>(context, listen: false).login();
-          },
-        )
-      ],
     );
   }
 }
